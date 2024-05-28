@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Alta Usuarios</title>
+        <link rel="icon" type="image/png" href="imagenes/logo.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <section>
+                <img class="logo" src="imagenes/logo.png" alt="Logo del museo">
+                <h1 class="nombre">Museo ArteVivo</h1>
+                <form class="formulariousuario">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="usuario" id="usuario" required>
+                
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" name="contraseña" id="contraseña" required>
+                    
+                    <input type="submit" value="Iniciar sesión" class="iniciosesion">
+                    <p>¿No dispones de cuenta?</p>
+                    <a href="altausuarios.html">Regístrate</a>
+                </form>
+            </section>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html" >Inicio</a></li>
+                    <li><a href="coleccion.html">Colección</a></li>
+                    <li><a href="visita.html">Visita</a></li>
+                    <li><a href="exposiciones.html">Exposiciones</a></li>
+                    <li><a href="informacion.html">Información general</a></li>
+                    <li><a href="experiencias.html" >Experiencias</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="registro">
+                <h2>Regístrate</h2>
+                    <form id="formularioregistro" action="altaexitosa.html" method="">
+                        <label for="nombreusuario">Nombre:</label>
+                        <input type="text" id="nombreusuario" name="nombreusuario"  required>
+                    
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                    
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+                    
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    
+                        <label for="fecha">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    
+                        <label for="comunidadautonoma">Comunidad Autónoma</label>
+                        <input list="opciones" id="comunidadautonoma" name="comunidadautonoma" required>
+                        <datalist id="opciones">
+                            <option value="Andalucía">Andalucía</option>
+                            <option value="Aragón">Aragón</option>
+                            <option value="Asturias">Asturias</option>
+                            <option value="Baleares">Baleares</option>
+                            <option value="Canarias">Canarias</option>
+                            <option value="Cantabria">Cantabria</option>
+                            <option value="Castilla-La Mancha">Castilla-La Mancha</option>
+                            <option value="Castilla y León">Castilla y León</option>
+                            <option value="Cataluña">Cataluña</option>
+                            <option value="Extremadura">Extremadura</option>
+                            <option value="Galicia">Galicia</option>
+                            <option value="La Rioja">La Rioja</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Murcia">Murcia</option>
+                            <option value="Navarra">Navarra</option>
+                            <option value="País Vasco">País Vasco</option>
+                            <option value="Valencia">Valencia</option>
+                            <option value="Ceuta">Ceuta</option>
+                            <option value="Melilla">Melilla</option>
+                        </datalist>
+                    
+                        <label for="provincia">Provincia:</label>
+                        <input type="text" id="provincia" name="provincia" required>
+                        
+                        <section id="form-radio">
+                            <p>¿Has visitado el Museo del Prado?</p>
+                            <label>Sí </label><input type="radio" name="visita_prado" value="si" required>
+                            <label>No</label><input type="radio" name="visita_prado" value="no" required > 
+                        </section>
+                        <section id="aceptar-terminos">
+                            <label for="aceptar_terminos">Aceptar términos y condiciones:</label>
+                            <input type="checkbox"  name="aceptar_terminos" id="aceptar_terminos" required>
+                        </section>
+
+                        <input type = "submit" value = "Registrarse" id="boton-registro">
+                        
+                    </form>
+            </section>
+            <footer>
+                <a href="contacto.html">Contacto</a>
+                <a href="como_se_hizo.pdf" target="_blank">Cómo se hizo</a>
+            </footer>
+        </main>
+    </body>
+</html>

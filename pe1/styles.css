@@ -1,0 +1,903 @@
+
+/*general*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+h2{
+    color:rgb(126, 87, 3);
+    font-size: 50px;
+    font-family: "playfair display";
+    text-align: center;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    font-family: "playfair display";
+}
+
+body {
+    background-image: url('imagenes/fondo1.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;
+    font-family: "playfair display";
+}
+
+body input[type="submit"]{
+    font-family: "playfair display";
+}
+
+section p{
+    font-size: 25px;
+    color: rgb(228, 154, 57);
+    text-align: justify;
+}
+
+ul{
+    list-style-type: none; 
+}
+
+/*header*/
+
+header section{
+    display: flex;
+}
+
+.logo{
+    border-radius: 50%;
+    border: 2px solid #e49a39; 
+    width:10%;
+    height:10%;
+    margin-top:1%;
+    margin-left:1%;
+}
+
+.nombre {
+    color:#7e5703;
+    font-size: 110px;
+    width:90%;
+    margin-top:3%;
+    margin-left: 2%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.formulariousuario {
+    background-color: #faebd7;
+    width: 15%;
+    height: 50%;
+    padding: 20px;
+    font-size: 20px;
+    color: #e49a39;
+    margin-top:0;
+    margin-bottom:1%;
+    border-radius: 10px;
+ }
+
+ .formulariousuario input[type="text"],
+ .formulariousuario input[type="password"] {
+     width: 100%;
+     padding: 10px;
+     box-sizing: border-box;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     margin-bottom: 10px;
+ }
+
+
+ .iniciosesion{
+    display: block;       
+    margin: 20px auto; 
+    background-color: #e49a39;
+    color: white;
+    border: none;
+    padding: 7px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size:17px;
+    text-align: center;
+}
+
+ .formulariousuario input[type="submit"]:hover {
+    background-color: #7e5703;
+}
+
+ .formulariousuario a {
+    background-color: #e49a39;
+    color: white;
+    padding: 7px 30px;
+    border-radius: 5px;
+    text-align: center;
+    font-size:17px;
+    transition: background-color 0.2s;
+    display: block;      
+    margin: 20px auto; 
+    width:50%;
+}
+
+.formulariousuario p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.formulariousuario a:hover {
+    background-color: #7e5703;
+}
+
+
+
+.menu {
+    background-color: #faebd7; 
+    
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0; 
+    display: flex; 
+    
+}
+
+.menu ul li {
+    flex-grow: 1; 
+    text-align: center; 
+    padding:10px;
+}
+
+.menu ul li a {
+    color: #e49a39;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.menu ul li:hover {
+    background-color: #7e5703;
+}
+
+
+
+
+/*footer*/
+
+footer{
+    display:flex;
+    margin-top:3%;
+    background-color: #faebd7;
+   
+}
+
+footer a{
+    color: #e49a39;
+    padding: 14px 16px; 
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    width:100%;
+    text-align: center;
+}
+
+footer a:hover{
+    background-color: #7e5703;
+    
+}
+
+
+/*index.html*/
+
+#indexmain{
+    padding-bottom: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#inf-index{
+    background-color: rgba(228, 154, 57, 0.502);
+    border-radius: 10px;
+    width:80%;
+    padding:15px;
+    margin-top:15px;
+}
+
+#inf-index p{
+    color:rgb(0, 0, 0);
+    font-size:25px;
+    text-align: justify;
+}
+
+
+/*informacion.html*/
+
+
+#informacionhorarios{
+    background-color: rgba(250, 235, 215, 0.8);
+    border-radius: 10px;
+}
+
+
+#horarioEinformacion{
+    margin-bottom:1%;
+    border-radius: 10px;
+    display: flex;
+}
+
+#horarioEinformacion table{
+    font-size: 20px;
+    margin: 1%;
+    text-align: center;
+    flex-grow:1;
+    padding:20px;
+    background-color: rgb(228, 154, 57,0.9);
+    color: white;
+    border-radius: 10px;
+}
+
+#horarioEinformacion p{
+    border-radius: 10px;
+    background-color: rgb(228, 154, 57,0.9);
+    padding: 20px;
+    color: white;
+    margin:1%;
+    width:50%;
+    font-size:20px;
+}
+
+
+#calendarioseccion{
+    background-color: rgb(250, 235, 215,0.8);
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom:1%;
+}
+
+
+#calendario {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #e49a39;
+}
+
+#calendario table {
+    font-size:40px;
+    flex-grow:1;
+    padding:10px;
+}
+    
+
+
+#calendario table th {
+    background-color: #e49a39;
+    color: white;
+    padding: 10px;
+}
+
+#calendario table td {
+    padding: 10px;
+    text-align: center;
+}
+
+
+.diacompleto{
+    background-color: rgb(94, 150, 94);
+    color: white;
+
+}
+
+.diacerrado {
+    background-color: rgb(187, 80, 80);
+    color: white;
+}
+
+.diamañana {
+    background-color: rgb(255, 217, 0);
+    color: white;
+}
+
+#leyenda{
+    background-color: #e49a39;
+    color: white;
+    border-radius: 10px;
+    height:50%;
+    width:15%;
+    margin-left:40px;
+    margin-top:20px;
+}
+
+#leyenda table {
+    font-size:22px;
+    padding:10px;
+}
+
+
+#verde, #amarillo, #rojo{
+    width: 15px;
+    height: 15px;
+    border: solid;
+}
+
+#rojo {
+    border-color: rgb(187, 80, 80);
+    background-color: rgb(187, 80, 80);
+}
+
+#amarillo {
+    border-color: rgb(255, 217, 0);
+    background-color: rgb(255, 217, 0);
+}
+
+#verde {
+    border-color: rgb(94, 150, 94);
+    background-color: rgb(94, 150, 94);
+}
+
+
+#precios{
+    background-color: rgb(250, 235, 215,0.8);
+    margin-bottom:1%;
+    border-radius: 10px;
+}
+
+#precios section{
+    display:flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#precios article{
+    background-color: rgb(228, 154, 57,0.9);
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding:10px;
+}
+
+#precios h3{
+    text-align: center;
+    color:white;
+    font-size: 40px;
+}
+
+#precios p{
+    text-align: center;
+    color:white;
+    background-color: #7e5703;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size:50px;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#precios li{
+    font-size: 25px;
+}
+
+
+
+
+/*altausuarios.html*/
+#registro{
+    display: grid;
+    place-items: center;
+   
+}
+
+#formularioregistro{
+    background-color: rgb(250, 235, 215,0.8);
+    width: 30%;
+    height: 95%;
+    font-size: 20px;
+    color: #e49a39;
+    border-radius: 10px;
+    padding:20px;
+}
+
+
+#form-radio {
+    display: flex;
+    align-items: center; 
+}
+#form-radio p{
+    width:200%;
+    font-size: 30px;
+    margin-right: 25px;
+}
+
+
+#aceptar-terminos{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+#formularioregistro label{
+    font-size: 30px;
+    width:100%;
+}
+
+#formularioregistro input{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#formularioregistro input[type="submit"] {
+    background-color: #e49a39;
+    color: white;
+    border: none;
+    padding: 7px;
+    width:50%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size:30px;
+    text-align: center;
+    margin-top:20px;
+}
+
+#formularioregistro input[type="submit"]:hover {
+   background-color: #7e5703;
+}
+
+#boton-registro{
+    display:block;
+    margin: auto;
+}
+
+/*altaexitosa.html*/
+#mainalta{
+   padding-bottom:340px;
+}
+
+#mainalta section{
+    background-color: rgb(250, 235, 215,0.8);
+    padding:10px;
+    border-radius: 10px;
+    margin:10px auto;
+    display:block;
+    width:50%;
+}
+
+#mainalta section p{
+    font-size:40px;
+    text-align: center;
+}
+
+
+/*coleccion.html*/
+
+.coleccion{
+    display: flex;
+}
+
+
+.submenu{
+    background: #e49a39;
+    color: white;
+    border-radius: 10px;
+    height:20%;
+    width:230px;
+
+}
+
+.submenu a{
+    color:white;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.submenu ul ul {
+    display: none;
+}
+
+.submenu ul li:hover > ul {
+    display: block;
+}
+
+
+.autores, .tema, .epoca {
+    text-transform: uppercase;
+}
+
+.autores::after {
+    content: "+";
+    padding-left:25px;
+}
+
+.tema::after {
+    content: "+";
+    padding-left:70px;
+}
+
+.epoca::after {
+    content: "+";
+    padding-left:56px;
+}
+
+
+
+.colecciones {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.colecciones a {
+    width:33.33%;
+}
+
+.colecciones figure{
+    background-color:bisque;
+    border-radius: 10px;
+    padding:20px;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.colecciones figure {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+
+
+.colecciones h4{
+    text-align: center;
+    color: #e49a39;
+    font-size: 30px;
+}
+
+.colecciones p{
+    text-align: center;
+    font-size: 30px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.colecciones a img {
+    width: 100%; 
+    height: 20%; 
+}
+
+#siguiente {
+    background-color: bisque;
+    width:10%;
+    float:right;
+    text-align: center;
+    border-radius: 10px;
+    margin-right:40px;
+}
+
+#siguiente a{
+    color:#e49a39;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size:30px;
+}
+
+/*coleccion_siguiente*/
+
+#anterior {
+    background-color: bisque;
+    width:10%;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:270px;
+    margin-bottom:-40px;
+}
+
+#anterior a{
+    color:#e49a39;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size:30px;
+}
+
+/*exposiciones.html*/
+
+.exposicion {
+    display: flex; 
+    background-color: rgb(255, 228, 196,0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom:15px;
+}
+
+
+
+.exposicion img {
+    width: 700px; 
+    height: auto; 
+}
+
+
+.exposicion figcaption {
+    text-align: center;
+    background-color: #e49a39;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding:10px;
+    margin:auto;
+    width:70%;
+}
+
+.resumen{
+    text-align: justify;
+}
+
+.descripcion{
+    text-align: center;
+    width:100%;
+}
+
+/*obra1.html*/
+
+.imagenobra{
+    width:100%;
+}
+
+.fichayobra {
+    display: flex;
+    padding: 20px;
+}
+
+.ficha-tecnica {
+    flex-basis: 66.66%;
+    padding: 10px;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+
+
+.ficha-tecnica p {
+    text-align: center;
+}
+
+.ficha-tecnica h3{
+    color: #e49a39;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.obrasrelacionadas {
+    flex-basis: 30.33%;
+    padding: 10px;
+    background-color: bisque;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.obrasrelacionadas nav {
+    display: grid;
+    place-items: center;
+}
+
+.obrasrelacionadas ul {
+    width:50%;
+}
+
+
+.obrasrelacionadas ul li{
+    background-color: #e49a39;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.obrasrelacionadas ul li:hover {
+    background-color: #7e5703;
+}
+
+
+.obrasrelacionadas h3 {
+    color: #e49a39;
+    font-size: 30px;
+    text-align: center;
+}
+
+.obrasrelacionadas ul li a {
+    color: rgb(255, 255, 255);
+}
+
+
+/*visitas.html*/
+#salas{
+    background-color: rgb(255, 228, 196,0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top:2%;
+}
+
+
+#articlesala{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#articlesala article{
+    flex: 50%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#articlesala article h3{
+    text-align: center;
+    font-size: 40px;
+}
+
+#articlesala article img{
+    width:600px;
+    height:600px;
+    
+}
+
+#articlesala p{
+    text-align: justify;
+    width:60%;
+}
+
+#plano{
+    background-color: rgb(255, 228, 196,0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top:2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#plano img{
+    width:85%;
+    height:85%;
+}   
+
+
+
+/*experiencias.html*/
+
+#opinionesysugerencias{
+    display: flex;
+}
+
+#opiniones{
+    background-color: rgb(255, 228, 196,0.8);
+    border-radius: 10px;
+    width:90%;
+    margin:10px;
+    padding:10px;
+}
+
+
+
+#opiniones article{
+    border-radius: 10px;
+    padding:10px;
+    margin:10px;
+    border: 2px solid #7e5703; 
+}
+
+
+
+.fotoynombre{
+    display: flex;
+}
+
+.fotoynombre img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.fotoynombre figcaption{
+    color: #e49a39;
+    font-size: 30px;
+    margin-top:auto;
+    margin-left:10px;
+}
+
+#sugerencias {
+    background-color: #ffe4c4cc;
+    border-radius: 10px;
+    width: 30%; 
+    height:50%;
+    margin: 10px auto; 
+    padding: 20px; 
+   
+}
+
+#sugerencias h2 {
+    text-align: center; 
+}
+
+#sugerencias p {
+    font-size: 18px;
+    margin-bottom: 20px; 
+    color:#000000;
+}
+
+
+#sugerencias textarea {
+    width: 100%;
+    height:150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid  #e49a39;
+    margin-bottom: 10px;
+    
+}
+
+#sugerencias input[type="submit"] {
+    background-color: #e49a39;
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 17px;
+    text-align: center;
+    display: block; 
+    margin: auto; 
+}
+
+#sugerencias input[type="submit"]:hover {
+    background-color: #7e5703;
+}
+
+
+/*contacto.html*/
+
+#contacto-desarrollador {
+    background-color: rgb(255, 228, 196,0.8);
+    border-radius: 10px;
+    width: 40%; 
+    margin: 10px auto; 
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#000000;
+    font-size: 20px;
+}
+
+#contacto-desarrollador img {
+    border-radius: 50%;
+    width:400px;
+    height:400px;
+}
+
+#contacto-desarrollador p{
+    color:black;
+}
+
+#contacto-desarrollador .enlace-contacto {
+    color: #000000; 
+    font-size: 20px;
+}
+
+

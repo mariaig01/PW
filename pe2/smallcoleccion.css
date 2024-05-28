@@ -1,0 +1,198 @@
+@media (max-width: 1511px) {
+    
+  .logo {
+    width: 15%; 
+    margin: 10px auto;
+  }
+  
+  .nombre {
+    font-size: 90px; 
+    padding-top:50px;
+  }
+  
+  .formulariousuario {
+    width: 22%; 
+    margin: 10px auto; 
+  }
+  
+
+  .formulariousuario input[type="text"],
+  .formulariousuario input[type="password"] {
+    margin-bottom: 5px; 
+  }
+  
+  .menu ul {
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+  
+  .menu ul li {
+    flex-grow: 0; 
+    text-align: center; 
+    margin: 5px; 
+  }
+
+  .coleccion {
+      display: block;
+  }
+
+  .colecciones a {
+      width: 50%;
+  }
+
+  .colecciones a img {
+      width: 100%; 
+      height: auto; 
+  }
+
+  #siguiente {
+    width: 60%;
+    float: none;
+    margin: 10px auto;
+}
+}
+
+@media (max-width: 873px) {
+    
+  header section{
+    display: block;
+  }
+   
+  .logo {
+    width: 30%; 
+    display: block;
+    margin: 10px auto;
+  }
+  
+  .nombre {
+    font-size: 80px; 
+    padding-top:50px;
+  }
+  
+  .formulariousuario {
+    width: 35%; 
+    margin: 10px auto; 
+  }
+  
+ 
+  
+  .formulariousuario input[type="text"],
+  .formulariousuario input[type="password"] {
+    margin-bottom: 5px; 
+  }
+  
+  
+  .menu ul {
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+  
+  .menu ul li {
+    flex-grow: 0; 
+    text-align: center; 
+    margin: 5px; 
+  }
+    .coleccion {
+        display: block;
+    }
+
+    .colecciones a {
+        width: 100%;
+    }
+
+    .colecciones a img {
+        width: 100%; 
+        height: auto; 
+    }
+
+
+    #siguiente {
+      width: 50%;
+      float: none;
+      margin: 10px auto;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+
+
+  header section{
+    display: block;
+  }
+   
+  .logo {
+    width: 30%; 
+    display: block;
+    margin: 10px auto;
+  }
+  
+  .nombre {
+    font-size: 65px; 
+    padding-top:50px;
+  }
+  
+  .formulariousuario {
+    width: 45%; 
+    margin: 10px auto; 
+  }
+  
+  .formulariousuario input[type="text"],
+  .formulariousuario input[type="password"] {
+    margin-bottom: 5px; 
+  }
+  
+  
+  .menu ul {
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+  
+  .menu ul li {
+    flex-grow: 0; 
+    text-align: center; 
+    margin: 5px; 
+  }
+
+  .menu ul li a{
+    font-size: 17px;
+  }
+
+    
+    footer a{
+        font-size: 17px;
+    }
+
+    .coleccion {
+      display: block;
+  }
+
+   .colecciones figure {
+      display:block;
+      margin:10px auto;
+      width:88%;
+  } 
+
+  .colecciones a img {
+      width: 100%; 
+      height: auto; 
+      display:block;
+  }
+
+  #siguiente {
+      width: 50%;
+      float: none;
+      margin: 10px auto;
+  }
+
+  #siguiente a{
+      font-size: 17px;
+  }
+
+}
+
+
+
+

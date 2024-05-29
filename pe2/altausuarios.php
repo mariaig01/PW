@@ -35,6 +35,13 @@
                     return;
                 }
 
+                // Validar el formato del teléfono
+                const telefonoRegex = /^\d{9}$/;
+                if (!telefonoRegex.test(telefono)) {
+                    alert('Por favor, introduce un número de teléfono válido con 9 dígitos.');
+                    return;
+                }
+
                 // Validar el formato de la fecha
                 const fechaRegex = /^\d{4}-\d{2}-\d{2}$/;
                 if (!fechaRegex.test(fecha)) {
@@ -119,7 +126,6 @@
                         // Ejecutar la consulta
                         $stmt->execute();
 
-                        
                         header("Location: altaexitosa.php");
                     } 
                     catch (PDOException $e) {

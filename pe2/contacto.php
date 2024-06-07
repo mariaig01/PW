@@ -11,18 +11,7 @@
             <section>
                 <img class="logo" src="imagenes/logo.png" alt="Logo del museo">
                 <h1 class="nombre">Museo ArteVivo</h1>
-                <form class="formulariousuario">
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" name="usuario" id="usuario" required>
-                
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" name="contraseña" id="contraseña" required>
-                    
-                    
-                    <input type="submit" value="Iniciar sesión" class="iniciosesion">
-                    <p>¿No dispones de cuenta?</p>
-                    <a href="altausuarios.php">Regístrate</a>
-                </form>
+                <?php include 'formularioinicio.php' ?>
             </section>
             <nav class="menu">
                 <ul>
@@ -46,7 +35,7 @@
             </section>
         </main>
         <footer>
-            <a href="contacto.html">Contacto</a>
+            <a href="contacto.php">Contacto</a>
             <a href="como_se_hizo.pdf" target="_blank">Cómo se hizo</a>
         </footer>
     </body>

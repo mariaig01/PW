@@ -11,18 +11,7 @@
             <section>
                 <img class="logo" src="imagenes/logo.png" alt="Logo del museo">
                 <h1 class="nombre">Museo ArteVivo</h1>
-                <form class="formulariousuario">
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" name="usuario" id="usuario" required>
-                
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" name="contraseña" id="contraseña" required>
-                    
-                    
-                    <input type="submit" value="Iniciar sesión" class="iniciosesion">
-                    <p>¿No dispones de cuenta?</p>
-                    <a href="altausuarios.php">Regístrate</a>
-                </form>
+                <?php include 'formularioinicio.php' ?>
             </section>
             <nav class="menu">
                 <ul>
@@ -38,36 +27,57 @@
         <main id="opinionesysugerencias">
             <section id="opiniones">
                 <h2>Opiniones y sugerencias</h2>
-                <article>
-                    <figure class="fotoynombre">
-                        <img src="imagenes/usuario.jpg" alt="Foto de usuario">
-                        <figcaption>Juan Ruiz</figcaption>
-                    </figure>
-                    <p>Me gustaría que el Museo ArteVivo ofreciera visitas guiadas en inglés para los turistas extranjeros. Creo que sería una buena forma de promocionar el museo y de atraer a más visitantes.</p>
-                </article>
-                <article>
-                    <figure class="fotoynombre">
-                        <img src="imagenes/usuario.jpg" alt="Foto de usuario">
-                        <figcaption>Juan Ruiz</figcaption>
-                    </figure>
-                    <p>Me gustaría que el Museo ArteVivo ofreciera visitas guiadas en inglés para los turistas extranjeros. Creo que sería una buena forma de promocionar el museo y de atraer a más visitantes.</p>
-                </article>
+                <?php
+                require 'conexionbd.php';
+                $sql = "SELECT Comentarios.usuario, Comentarios.sugerencia, Usuarios.imagen 
+                        FROM Comentarios 
+                        INNER JOIN Usuarios ON Comentarios.usuario = Usuarios.nombreusuario 
+                        ORDER BY Comentarios.fecha_comentario DESC"; 
+                        
+                $stmt = $conexion->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo '<article>';
+                    echo '<figure class="fotoynombre">';
+                    echo '<img src="' . htmlspecialchars($row['imagen']) . '" alt="Foto de usuario">';
+                    echo '<figcaption>' . htmlspecialchars($row['usuario']) . '</figcaption>';
+                    echo '</figure>';
+                    echo '<p>' . htmlspecialchars($row['sugerencia']) . '</p>';
+                    echo '</article>';
+                }
+                ?>
             </section>
             <section id="sugerencias">
                 <h2>Buzón</h2>
                 <p>¿Te gustaría enviar una sugerencia u opinión?</p>
-                <form action="procesar.php" method="post">
-                
-                    <label for="sugerencia">Sugerencia/opinión:</label>
-                    <textarea id="sugerencia" name="sugerencia" required></textarea>
-                
-                    <input type="submit" value="Enviar sugerencia">
-                </form>
+                <?php
+                    if (isset($_SESSION['usuario'])) { // Verificar si el usuario está logeado
+                        ?>
+                        <form id="form-sugerencia" action="registrosugerencia.php" method="post">
+                            <label for="sugerencia">Sugerencia/opinión:</label>
+                            <textarea id="sugerencia" name="sugerencia" ></textarea>
+                            <input type="submit" value="Enviar sugerencia">
+                        </form>
+                        <?php
+                    } else {
+                        echo "<p>Para enviar una sugerencia, debes iniciar sesión.</p>";
+                    }
+                ?>
             </section>
         </main>
         <footer>
-            <a href="contacto.html">Contacto</a>
+            <a href="contacto.php">Contacto</a>
             <a href="como_se_hizo.pdf" target="_blank">Cómo se hizo</a>
         </footer>
+        
+        <script>
+            document.getElementById('form-sugerencia').addEventListener('submit', function(event) {
+                var sugerencia = document.getElementById('sugerencia').value.trim();
+                if (sugerencia === '') {
+                    event.preventDefault(); // Evita el envío del formulario
+                    alert('Por favor, ingresa una sugerencia antes de enviar.');
+                }
+            });
+        </script>
     </body>
 </html>

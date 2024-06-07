@@ -1,5 +1,0 @@
-1. en experiencias sólo pueden añadir opiniones los usuarios que estan registrados y han iniciado sesion? si
-2. en la tabla de la base de datos de usuarios, poner un campo en el que se diga si es administrador o usuario normal? si, un booleano por ejemplo
-4. de donde se cogen los valores de los campos siglo, autor y tema, de una tabla submenu?
-
-tabla usuarios, tabla obras (meter la ruta), tabla comentarios (con capmpos id comentario, el comentario, y el id de usuario (clave externa a usuario))

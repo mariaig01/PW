@@ -1105,6 +1105,11 @@ footer a:hover{
     display: none; 
 }
 
+.tooltip h4{
+    color:#e49a39;
+    font-size: 30px;
+}
+
 #usuariofigure{
     display:flex;
     margin: auto;

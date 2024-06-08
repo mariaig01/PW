@@ -8,20 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tema = $_POST['tema'];
     $descripcion = $_POST['descripcion'];
 
-    // Validar que los campos no estén vacíos
-    if (empty($titulo) || empty($autor) || empty($epoca) || empty($imagen) || empty($tema) || empty($descripcion)) {
-        echo "Todos los campos son obligatorios.";
-        exit();
-    }
-
-    // Validar que la URL de la imagen sea válida
-    if (!filter_var($imagen, FILTER_VALIDATE_URL)) {
-        echo "Por favor, introduce una URL válida para la imagen.";
-        exit();
-    }
-
-    // Validar otros posibles requisitos adicionales...
-
     // Insertar los datos en la base de datos
     try {
         // Conexión a la base de datos

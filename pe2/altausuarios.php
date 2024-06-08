@@ -12,7 +12,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <link rel="stylesheet" type="text/css" href="styles.css">
         <script>
             async function validarFormulario(event) {
-                event.preventDefault(); // Prevenir el envío del formulario
+                event.preventDefault(); 
 
                 // Validar si el formulario está totalmente vacío
                 const camposVacios = ['nombreusuario', 'contrasenia', 'nombre', 'apellidos', 'correo', 'telefono', 'fecha', 'comunidadautonoma', 'provincia', 'imagen'];
@@ -34,7 +34,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 const visita_prado = document.querySelector('input[name="visita_prado"]:checked').value;
                 const aceptar_terminos = document.getElementById('aceptar_terminos').checked;
 
-                // Validar que los campos no estén vacíos y otros criterios específicos
+                // Validar que los campos no estén vacíos
                 if (!nombreusuario || !contrasenia || !nombre || !apellidos || !correo || !telefono || !fecha || !comunidadautonoma || !provincia || !aceptar_terminos) {
                     alert('Todos los campos son obligatorios.');
                     return;
@@ -61,8 +61,8 @@ if (session_status() == PHP_SESSION_NONE) {
                     return;
                 }
 
-                // Validar que el nombre de usuario no esté repetido
-                const existeUsuario = await verificarExistencia('nombreusuario', nombreusuario);
+                 // Validar que el nombre de usuario no esté repetido
+                 const existeUsuario = await verificarExistencia('nombreusuario', nombreusuario);
                 if (existeUsuario) {
                     alert('El nombre de usuario ya está registrado.');
                     return;
@@ -115,6 +115,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     } else {
                         mensajeUsuario.textContent = '¡El nombre de usuario ya está en uso!';
                         mensajeUsuario.style.color = 'red';
+                        return;
                     }
                 } else {
                     // Limpiar mensaje si el campo está vacío
@@ -149,8 +150,10 @@ if (session_status() == PHP_SESSION_NONE) {
                 require 'conexionbd.php';
 
                 // Consulta SQL para insertar el nuevo usuario
-                $sql = "INSERT INTO Usuarios (nombreusuario, contrasenia, nombre, apellidos, correo, telefono, fecha_nacimiento, comunidad_autonoma, provincia, visita_prado, aceptar_terminos, es_administrador, imagen)
-                        VALUES (:nombreusuario, :contrasenia, :nombre, :apellidos, :correo, :telefono, :fecha_nacimiento, :comunidad_autonoma, :provincia, :visita_prado, :aceptar_terminos, :es_administrador, :imagen)";
+                $sql = "INSERT INTO Usuarios (nombreusuario, contrasenia, nombre, apellidos, correo, telefono, 
+                        fecha_nacimiento, comunidad_autonoma, provincia, visita_prado, aceptar_terminos, es_administrador, imagen)
+                        VALUES (:nombreusuario, :contrasenia, :nombre, :apellidos, :correo, :telefono, :fecha_nacimiento, :comunidad_autonoma, 
+                        :provincia, :visita_prado, :aceptar_terminos, :es_administrador, :imagen)";
 
                 // Preparar la consulta
                 $stmt = $conexion->prepare($sql);
@@ -181,9 +184,9 @@ if (session_status() == PHP_SESSION_NONE) {
                 <script type="text/javascript">
                     document.getElementById("loginForm").submit();
                 </script>';
+
                 exit();
 
-                //header("Location: altaexitosa.php");
             } catch (PDOException $e) {
                 // Manejo de errores
                 echo "Error: " . $e->getMessage();
@@ -194,7 +197,54 @@ if (session_status() == PHP_SESSION_NONE) {
             <section>
                 <img class="logo" src="imagenes/logo.png" alt="Logo del museo">
                 <h1 class="nombre">Museo ArteVivo</h1>
-                <?php include 'formularioinicio.php' ?>
+                <script>
+                    function validarFormularioInicio(event) {
+
+                        const usuario = document.getElementById('usuario').value;
+                        const contrasena = document.getElementById('contraseña').value;
+
+                        if (!usuario || !contrasena) {
+                            alert('Ambos campos son obligatorios.');
+                            event.preventDefault(); 
+                        }
+                    }
+                </script>
+                <?php if (!isset($_SESSION['usuario'])): ?>
+                    <form class="formulariousuario" method="post" action="iniciosesion.php" onsubmit="validarFormularioInicio(event)">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" name="usuario" id="usuario">
+
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" name="contraseña" id="contraseña">
+                        
+                        <input type="submit" value="Iniciar sesión" class="iniciosesion">
+
+                        <?php
+                            if (isset($_SESSION['error_login'])) {
+                                echo '<p class="error">' . $_SESSION['error_login'] . '</p>';
+                                unset($_SESSION['error_login']);
+                            }
+                        ?>
+
+                        <p>¿No dispones de cuenta?</p>
+                        <a href="altausuarios.php">Regístrate</a>
+                    </form>
+                <?php else: ?>
+                    <section id="usuario-inicio">
+                        <article id="iconousuario">
+                            <a href="usuario.php" >
+                                <img src="imagenes/usuario.jpg" alt="icono usuario" id="icono-usuario">
+                            </a>
+                        </article>
+                        <figure id="usuariofigure">
+                            <img src="<?php echo $_SESSION['imagen']; ?>" alt="Imagen del usuario" id="imagenusuario">
+                            <p class="mensaje_bienvenida"><?php echo $_SESSION['mensaje_bienvenida']; ?></p>
+                        </figure>
+                        <form method="post" action="logout.php">
+                            <input type="submit" value="Cerrar sesión" class="cerrarsesion">
+                        </form>
+                    </section>
+                <?php endif; ?>
             </section>
             <nav class="menu">
                 <ul>
@@ -210,9 +260,9 @@ if (session_status() == PHP_SESSION_NONE) {
         <main>
             <section id="registro">
                 <h2>Regístrate</h2>
-                <form id="formularioregistro" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" require onsubmit="validarFormulario(event)">
+                <form id="formularioregistro" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="validarFormulario(event)">
                     <label for="nombreusuario">Nombre de usuario:</label>
-                    <input type="text" name="nombreusuario" id="nombreusuario" oninput="verificarNombreUsuario()">
+                    <input type="text" name="nombreusuario" id="nombreusuario" oninput="verificarNombreUsuario()" >
                     <p id="mensaje-usuario"></p>
 
                     <label for="contrasenia">Contraseña:</label>
@@ -273,6 +323,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <input type="checkbox" name="aceptar_terminos" id="aceptar_terminos">
                     </section>
                     <input type="submit" value="Registrarse" id="boton-registro">
+
                 </form>
             </section>
             <footer>

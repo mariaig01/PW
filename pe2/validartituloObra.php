@@ -17,7 +17,6 @@ try {
     echo json_encode($response);
 } catch (PDOException $e) {
     // Registrar el error en un archivo
-    file_put_contents('errors.txt', $e->getMessage(), FILE_APPEND);
     echo json_encode(['error' => $e->getMessage()]);
 }
 ?>

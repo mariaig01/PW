@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comunidad_autonoma = $_POST['comunidad_autonoma'];
     $provincia = $_POST['provincia'];
     $nombreusuario = $_SESSION['usuario'];
-    $imagen = $_POST['imagen']; // La URL de la imagen ingresada por el usuario
+    $imagen = $_POST['imagen']; 
 
     // Actualizar datos
     $sql = "UPDATE Usuarios SET nombre=:nombre, apellidos=:apellidos, correo=:correo, telefono=:telefono, fecha_nacimiento=:fecha_nacimiento, comunidad_autonoma=:comunidad_autonoma, provincia=:provincia, imagen=:imagen WHERE nombreusuario=:nombreusuario";

@@ -8,12 +8,13 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <script>
         function validarFormulario(event) {
+
             const usuario = document.getElementById('usuario').value;
             const contrasena = document.getElementById('contraseña').value;
 
             if (!usuario || !contrasena) {
                 alert('Ambos campos son obligatorios.');
-                event.preventDefault(); // Prevenir el envío del formulario
+                event.preventDefault(); 
             }
         }
     </script>

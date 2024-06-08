@@ -73,9 +73,9 @@
         <script>
             document.getElementById('form-sugerencia').addEventListener('submit', function(event) {
                 var sugerencia = document.getElementById('sugerencia').value.trim();
-                if (sugerencia === '') {
+                if (sugerencia.length < 50) {
                     event.preventDefault(); // Evita el envío del formulario
-                    alert('Por favor, ingresa una sugerencia antes de enviar.');
+                    alert('Por favor, ingresa una sugerencia de al menos 50 caracteres antes de enviar.');
                 }
             });
         </script>

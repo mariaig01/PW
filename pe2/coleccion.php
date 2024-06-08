@@ -36,7 +36,7 @@
                                 <a href="#" class="autores">Autores</a>
                                 <ul>
                                     <?php
-                                        require 'conexionbd.php'; // Archivo de conexión a la base de datos
+                                        require 'conexionbd.php'; 
 
                                         try {
                                             $sql_autores = "SELECT DISTINCT autor FROM Obras";
@@ -227,28 +227,29 @@
                 ?>
             </section>
         </main>
-        <section class="tooltip"></section> <script>
-            var figures = document.querySelectorAll('figure');
-            var tooltip = document.querySelector('.tooltip');
+        <section class="tooltip"></section> 
+            <script>
+                var figures = document.querySelectorAll('figure');
+                var tooltip = document.querySelector('.tooltip');
 
-            for (var i = 0; i < figures.length; i++) {
-                figures[i].addEventListener('mouseover', function(event) {
-                     var titulo = this.querySelector('h4').textContent;
-                     var categoria = this.querySelector('p').textContent;
+                for (var i = 0; i < figures.length; i++) {
+                    figures[i].addEventListener('mouseover', function(event) {
+                        var titulo = this.querySelector('h4').textContent;
+                        var categoria = this.querySelector('p').textContent;
 
-                    tooltip.innerHTML = '<h3>' + titulo + '</h3><p>Categoría: ' + categoria + '</p>'; 
-                    tooltip.style.display = 'block';
+                        tooltip.innerHTML = '<h4>' + titulo + '</h4><p>Categoría: ' + categoria + '</p>'; 
+                        tooltip.style.display = 'block';
 
-                    // Posiciona la tooltip a la derecha del cursor
-                    tooltip.style.left = event.pageX + 10 + 'px';
-                    tooltip.style.top = event.pageY + 10 + 'px'; 
-                });
+                        // Posiciona la tooltip a la derecha del cursor
+                        tooltip.style.left = event.pageX + 10 + 'px';
+                        tooltip.style.top = event.pageY + 10 + 'px'; 
+                    });
 
-                figures[i].addEventListener('mouseout', function() {
-                    tooltip.style.display = 'none';
-                });
-            }
-        </script>
+                    figures[i].addEventListener('mouseout', function() {
+                        tooltip.style.display = 'none';
+                    });
+                }
+            </script>
         <footer>
             <a href="contacto.php">Contacto</a>
             <a href="como_se_hizo.pdf" target="_blank">Cómo se hizo</a>

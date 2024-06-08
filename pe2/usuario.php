@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link href="smallindex.css" type="text/css" rel="stylesheet" media="(max-width: 1511px)">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     <body>
         <header>
@@ -129,5 +130,31 @@
             <a href="contacto.php">Contacto</a>
             <a href="como_se_hizo.pdf" target="_blank">Cómo se hizo</a>
         </footer>
+        <script>
+            document.getElementById('formulario-modificar-usuario').addEventListener('submit', function(event) {
+                // Prevenir el envío del formulario
+                event.preventDefault();
+
+                // Obtener los valores de los campos del formulario
+                const nombre = document.getElementById('nombre').value.trim();
+                const apellidos = document.getElementById('apellidos').value.trim();
+                const correo = document.getElementById('correo').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const fecha_nacimiento = document.getElementById('fecha_nacimiento').value.trim();
+                const comunidad_autonoma = document.getElementById('comunidad_autonoma').value.trim();
+                const provincia = document.getElementById('provincia').value.trim();
+                const imagen = document.getElementById('imagen').value.trim();
+
+                // Verificar si algún campo está vacío
+                if (nombre === '' || apellidos === '' || correo === '' || telefono === '' || fecha_nacimiento === '' || comunidad_autonoma === '' || provincia === '' || imagen === '') {
+                    alert('Todos los campos son obligatorios.');
+                    return;
+                }
+
+                // Si no hay campos vacíos, enviar el formulario
+                this.submit();
+            });
+        </script>
+
     </body>
 </html>

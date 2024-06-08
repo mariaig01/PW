@@ -71,15 +71,17 @@
     </header>
     <main>
         <h2>Cambiar Contraseña</h2>
-        <?php
+        
+        <form id="form-cambiar-contrasenia" action="cambiar_contraseniabd.php" method="post" onsubmit="validarFormulario(event)">
+            <label for="contrasena_actual">Contraseña Actual:</label>
+            <input type="password" id="contrasena_actual" name="contrasena_actual">
+
+            <?php
             if (isset($_SESSION['mensaje_error'])) {
                 echo "<p style='color:red'>" . $_SESSION['mensaje_error'] . "</p>";
                 unset($_SESSION['mensaje_error']);
             }
-        ?>
-        <form id="form-cambiar-contrasenia" action="cambiar_contraseniabd.php" method="post" onsubmit="validarFormulario(event)">
-            <label for="contrasena_actual">Contraseña Actual:</label>
-            <input type="password" id="contrasena_actual" name="contrasena_actual">
+            ?>
 
             <label for="nueva_contrasena">Nueva Contraseña:</label>
             <input type="password" id="nueva_contrasena" name="nueva_contrasena">
